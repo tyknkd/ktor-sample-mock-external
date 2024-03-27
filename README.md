@@ -1,5 +1,6 @@
-Sample Ktor app with test using mock external services for different port on localhost. 
-Based on [Ktor docs](https://ktor.io/docs/testing.html#external-services).
+Sample Ktor app with test using mock external services for different port on localhost based on [Ktor docs](https://ktor.io/docs/testing.html#external-services).
+
+[YouTrack Issue is here.](https://youtrack.jetbrains.com/issue/KTOR-6880/Mock-external-services-for-a-localhost-port-throws-InvalidTestRequestException)
 
 Throws exception:
 ```shell
