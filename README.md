@@ -24,3 +24,14 @@ Log:
 2024-03-28 07:43:46.915 [Test worker @coroutine#1] TRACE i.k.c.plugins.defaultTransformers - Transformed with default transformers request body for http://localhost:8081/myroute from class io.ktor.http.content.TextContent
 2024-03-28 07:43:46.953 [Test worker @coroutine#1] TRACE i.k.client.plugins.HttpCallValidator - Processing exception io.ktor.server.testing.client.InvalidTestRequestException: Can not resolve request to http://localhost:8081. Main app runs at localhost:80, localhost:443 and external services are http://localhost for request http://localhost:8081/myroute
 ```
+
+Solution (from [Aleksei Tirman](https://github.com/Stexxe)):
+
+Provide full external service URL:
+```shell
+externalServices {
+    hosts("http://localhost:8081") {
+        // ...
+    }
+}
+```

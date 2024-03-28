@@ -12,11 +12,10 @@ class SendDataTest {
     @Test
     fun testPostData() = testApplication {
         externalServices {
-            val port = "8081"
-            hosts(port) {
+            hosts("http://localhost:8081") {
                 install(io.ktor.server.plugins.contentnegotiation.ContentNegotiation) { json() }
                 routing {
-                    post("/myroute") {
+                    post("myroute") {
                         call.respondText("OK", status = HttpStatusCode.OK)
                     }
                 }
